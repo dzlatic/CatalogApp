@@ -509,7 +509,5 @@ def default_route(e):
 
 
 if __name__ == '__main__':
-    print("DB_USER={}   DB_PASSWORD={}   DB_NAME={}".format(DB_USER, DB_PASSWORD, DB_NAME))
     app.secret_key = 'super_secret_key'
-    app.debug = True
-    app.run(host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=80)
