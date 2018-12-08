@@ -24,7 +24,7 @@ Besides real categories, users also have on their disposal two helper cathegorie
 
 ## Notes:
 
-Followed [instructions](http://flask.pocoo.org/docs/1.0/deploying/mod_wsgi/) to integrate Flesk with Apache2. Added new file catalog.wsgi on the level above project files.
+Followed [instructions](http://flask.pocoo.org/docs/1.0/deploying/mod_wsgi/) to integrate Flesk with Apache2. Added new file ##catalog.wsgi## on the level above project files.
 
 ## Summary of other configuration and changes
 
@@ -71,4 +71,5 @@ User "grader" has beed created and could be used for deployment review. It is ad
 
 
 Location of the application: /var/www/CatalogApp
+
 Location of Apache/WSGI conf: /etc/apache2/sites-available/CatalogApp.conf
