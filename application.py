@@ -21,21 +21,19 @@ from database_setup import Base, Category, CategoryItem, User
 
 app = Flask(__name__)
 
-import sys
-sys.path.insert(0,"/var/www/CatalogApp/CatalogApp/")
 
 CLIENT_ID = json.loads(
-    open('client_secrets.json', 'r').read())['web']['client_id']
+    open("/var/www/CatalogApp/CatalogApp/client_secrets.json", 'r').read())['web']['client_id']
 APPLICATION_NAME = "Catalog App"
 
 DB_USER = json.loads(
-    open('db_secrets.json', 'r').read())['database']['user']
+    open("/var/www/CatalogApp/CatalogApp/db_secrets.json", 'r').read())['database']['user']
 
 DB_PASSWORD = json.loads(
-    open('db_secrets.json', 'r').read())['database']['password']
+    open("/var/www/CatalogApp/CatalogApp/db_secrets.json", 'r').read())['database']['password']
 
 DB_NAME = json.loads(
-    open('db_secrets.json', 'r').read())['database']['name']
+    open("/var/www/CatalogApp/CatalogApp/db_secrets.json", 'r').read())['database']['name']
 
 APPLICATION_NAME = "Catalog App"
 

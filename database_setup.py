@@ -13,10 +13,10 @@ DB_USER = json.loads(
     open("/var/www/CatalogApp/CatalogApp/db_secrets.json", 'r').read())['database']['user']
 
 DB_PASSWORD = json.loads(
-    open('db_secrets.json', 'r').read())['database']['password']
+    open("/var/www/CatalogApp/CatalogApp/db_secrets.json", 'r').read())['database']['password']
 
 DB_NAME = json.loads(
-    open('db_secrets.json', 'r').read())['database']['name']
+    open("/var/www/CatalogApp/CatalogApp/db_secrets.json", 'r').read())['database']['name']
 
 class User(Base):
     __tablename__ = 'user'
