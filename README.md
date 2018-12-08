@@ -50,7 +50,8 @@ Updated Google credentials with validated domain (used meta tag method)
 | static/favicon.ico | Web app icon, required by browsers |
 
 
-## Files nessesary bit not included in Git repository (transfer to server done using scp)
+## Files nessesary bit not included in Git repository
+(transfer to server was done using scp, as best practice for sensitive data)
 
 | File | Comment |
 | ------ | ------ |
@@ -66,9 +67,10 @@ Updated Google credentials with validated domain (used meta tag method)
 | PostgreSQL | 9.5 | [link](https://www.postgresql.org/download/) |
 
 
-## catalog.wsgi:
+#### new file: catalog.wsgi:
+(added on the level above all project files)
 
-\#!/usr/bin/python3
+'''#!/usr/bin/python3
 
 import sys
 import logging
@@ -76,4 +78,4 @@ logging.basicConfig(stream=sys.stderr)
 sys.path.insert(0,"/var/www/CatalogApp/CatalogApp/")
 
 from application import app as application
-application.secret_key = 'super_secret_key'
+application.secret_key = 'super_secret_key'''
