@@ -16,8 +16,7 @@ import json
 from flask import make_response
 import requests
 
-import sys
-sys.path.insert(0,"/var/www/CatalogApp/CatalogApp/")
+
 from database_setup import Base, Category, CategoryItem, User
 
 app = Flask(__name__)
