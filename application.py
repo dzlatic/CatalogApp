@@ -24,13 +24,13 @@ CLIENT_ID = json.loads(
 APPLICATION_NAME = "Catalog App"
 
 DB_USER = json.loads(
-    open('client_secrets.json', 'r').read())['database']['user']
+    open('db_secrets.json', 'r').read())['database']['user']
 
 DB_PASSWORD = json.loads(
-    open('client_secrets.json', 'r').read())['database']['password']
+    open('db_secrets.json', 'r').read())['database']['password']
 
 DB_NAME = json.loads(
-    open('client_secrets.json', 'r').read())['database']['name']
+    open('db_secrets.json', 'r').read())['database']['name']
 
 APPLICATION_NAME = "Catalog App"
 

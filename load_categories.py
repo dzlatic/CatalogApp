@@ -5,13 +5,13 @@ import psycopg2
 import json
 
 DB_USER = json.loads(
-    open('client_secrets.json', 'r').read())['database']['user']
+    open('db_secrets.json', 'r').read())['database']['user']
 
 DB_PASSWORD = json.loads(
-    open('client_secrets.json', 'r').read())['database']['password']
+    open('db_secrets.json', 'r').read())['database']['password']
 
 DB_NAME = json.loads(
-    open('client_secrets.json', 'r').read())['database']['name']
+    open('db_secrets.json', 'r').read())['database']['name']
 
 engine = create_engine(
     'postgresql://' + DB_USER + ':' + DB_PASSWORD + '@localhost:5432/' + DB_NAME)  # echo=True

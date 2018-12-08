@@ -9,13 +9,13 @@ import psycopg2
 Base = declarative_base()
 
 DB_USER = json.loads(
-    open('client_secrets.json', 'r').read())['database']['user']
+    open('db_secrets.json', 'r').read())['database']['user']
 
 DB_PASSWORD = json.loads(
-    open('client_secrets.json', 'r').read())['database']['password']
+    open('db_secrets.json', 'r').read())['database']['password']
 
 DB_NAME = json.loads(
-    open('client_secrets.json', 'r').read())['database']['name']
+    open('db_secrets.json', 'r').read())['database']['name']
 
 class User(Base):
     __tablename__ = 'user'
