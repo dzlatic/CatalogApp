@@ -1,13 +1,24 @@
 # Project: Item Catalog @ Udacity Full Stack Nanodegree
 # "Catalog App" web application
 
-This project is a web application "Catalog App" in Flask that provides a general purpose catalog of items. Users can review catalog items without signing in. Users can also add new items, as well as edit and delete the items they have created upon signin in using Google OAuth.
+This project is a web application "Catalog App" in Flask that provides a
+general purpose catalog of items. Users can review catalog items without
+signing in. Users can also add new items, as well as edit and delete the
+items they have created upon sign-in in using Google OAuth.
 
-Catalog is organized per categories of items. Before accessing data about items, users select the category. Categories are under control of web administrator only, so users cannot create, delete or change categories using "Catalog App" web application. 
+Catalog is organized per categories of items. Before accessing data about
+items, users select the category. Categories are under control of web
+administrator only, so users cannot create, delete or change categories
+using "Catalog App" web application.
 
-Besides real categories, users also have on their disposal two helper cathegories: 
+To load new categories, or to initialize database, authorized user can edit
+and run teh file  /var/www/CatalogApp/CatalogApp/load_categories.py.
 
-"Latest Items" showing the last 10 items created in the application by all users, and
+Besides real categories, web users also have on their disposal two helper
+categories:
+
+"Latest Items" showing the last 10 items created in the application by
+all users, and
 
 "My Items" showing the list of items currently logged in user owns.
 
@@ -17,14 +28,36 @@ Besides real categories, users also have on their disposal two helper cathegorie
 
 | Parameter | Value |
 | ------ | ------ |
-| IP Address of the server | 52.58.31.5 |
+| IP Address of the server | 35.157.7.133 |
 | SSH port | 2200 |
-| URL of the web application | http://52.58.31.5.xip.io/catalog |
+| URL of the web application | http://35.157.7.133.xip.io/catalog |
+| Application: | /var/www/CatalogApp |
+| Apache/WSGI conf | /etc/apache2/sites-available/CatalogApp.conf |
 
 
-## Notes:
+## Important Notes:
 
-Followed [instructions](http://flask.pocoo.org/docs/1.0/deploying/mod_wsgi/) to integrate Flesk with Apache2. Added new file ##catalog.wsgi## on the level above project files.
+1. Remote login with password has been disabled. You can only access the server
+with SHH if you have private key got user 'grader'. You can change this configuration
+by changing values
+### "PubkeyAuthentication yes"
+### "PasswordAuthentication no"
+### in the file /etc/ssh/sshd_config
+
+
+2. This server is configured so that only open ports are:
+
+| Port | tcp/udp | purpose |
+| ------ | ------ | ------ |
+| 2200 | tcp | SSH |
+| 80 | tcp | HTTP |
+| 123 | udp | NTP |
+
+Please note that default SSH port is disabled! Validate configuration with command:
+### sudo ufw status verbose
+
+
+3. Added new file ##catalog.wsgi## on the level above project files.
 
 ## Summary of other configuration and changes
 
@@ -64,12 +97,17 @@ User "grader" has beed created and could be used for deployment review. It is ad
 
 | Software | Version | Download |
 | ------ | ------ | ------ |
+| Ubuntu | 16.04 |        |
 | Python | Python 3.5.2 | [link](https://www.python.org/downloads/release/python-352/) |
 | Flask | 1.0.2 | [link](http://flask.pocoo.org/docs/1.0/installation/) |
 | PostgreSQL | 9.5 | [link](https://www.postgresql.org/download/) |
 
 
+Useful links:
 
-Location of the application: /var/www/CatalogApp
+[Apache on Ubuntu](http://manpages.ubuntu.com/manpages/xenial/man8/a2ensite.8.html)
+[Flash on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
+[PostgreSQL on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04)
+[Ubuntu firewall](https://help.ubuntu.com/community/UFW)
+[WSGI on Apache](http://flask.pocoo.org/docs/1.0/deploying/mod_wsgi/)
 
-Location of Apache/WSGI conf: /etc/apache2/sites-available/CatalogApp.conf
