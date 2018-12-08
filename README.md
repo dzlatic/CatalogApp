@@ -12,6 +12,7 @@ Besides real categories, users also have on their disposal two helper cathegorie
 "My Items" showing the list of items currently logged in user owns.
 
 
+
 ## Deployment Info
 
 | Parameter | Value |
@@ -23,7 +24,7 @@ Besides real categories, users also have on their disposal two helper cathegorie
 
 ## Notes:
 
-Followed [instructions](http://flask.pocoo.org/docs/1.0/deploying/mod_wsgi/) to integrate Flesk with Apache2
+Followed [instructions](http://flask.pocoo.org/docs/1.0/deploying/mod_wsgi/) to integrate Flesk with Apache2. Added new file catalog.wsgi on the level above project files.
 
 ## Summary of other configuration and changes
 
@@ -31,6 +32,7 @@ Added support for PostgreSQL
 Adjusted code so that new directory structure is considered
 Updated AWS configuration to reflect te same ports opening as on Ubuntu
 Updated Google credentials with validated domain (used meta tag method)
+User "grader" has beed created and could be used for deployment review. It is added to sudoers, if "sudo" password is required, it is the same as user name.
 
 ## Files included in Git repository:
 
@@ -67,15 +69,6 @@ Updated Google credentials with validated domain (used meta tag method)
 | PostgreSQL | 9.5 | [link](https://www.postgresql.org/download/) |
 
 
-#### new file: catalog.wsgi:
-(added on the level above all project files)
 
-'''#!/usr/bin/python3
-
-import sys
-import logging
-logging.basicConfig(stream=sys.stderr)
-sys.path.insert(0,"/var/www/CatalogApp/CatalogApp/")
-
-from application import app as application
-application.secret_key = 'super_secret_key'''
+Location of the application: /var/www/CatalogApp
+Location of Apache/WSGI conf: /etc/apache2/sites-available/CatalogApp.conf
