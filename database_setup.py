@@ -6,6 +6,10 @@ from sqlalchemy import create_engine
 import json
 import psycopg2
 
+
+import sys
+sys.path.insert(0,"/var/www/CatalogApp/CatalogApp/")
+
 Base = declarative_base()
 
 DB_USER = json.loads(

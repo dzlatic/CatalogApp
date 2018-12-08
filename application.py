@@ -22,9 +22,11 @@ from database_setup import Base, Category, CategoryItem, User
 
 app = Flask(__name__)
 
+import sys
+sys.path.insert(0,"/var/www/CatalogApp/CatalogApp/")
 
 CLIENT_ID = json.loads(
-    open('CatalogApp/client_secrets.json', 'r').read())['web']['client_id']
+    open('client_secrets.json', 'r').read())['web']['client_id']
 APPLICATION_NAME = "Catalog App"
 
 DB_USER = json.loads(
