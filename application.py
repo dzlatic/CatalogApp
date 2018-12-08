@@ -4,7 +4,7 @@ import functools
 from sqlalchemy import asc, create_engine
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import sessionmaker, joinedload, exc as orm_exc
-from database_setup import Base, Category, CategoryItem, User
+
 import psycopg2
 from flask import session as login_session
 import random
@@ -16,6 +16,10 @@ import json
 from flask import make_response
 import requests
 
+import sys
+sys.path.insert(0,"/var/www/CatalogApp/CatalogApp/")
+from database_setup import Base, Category, CategoryItem, User
+
 app = Flask(__name__)
 
 
@@ -24,13 +28,13 @@ CLIENT_ID = json.loads(
 APPLICATION_NAME = "Catalog App"
 
 DB_USER = json.loads(
-    open('CatalogApp/db_secrets.json', 'r').read())['database']['user']
+    open('db_secrets.json', 'r').read())['database']['user']
 
 DB_PASSWORD = json.loads(
-    open('CatalogApp/db_secrets.json', 'r').read())['database']['password']
+    open('db_secrets.json', 'r').read())['database']['password']
 
 DB_NAME = json.loads(
-    open('CatalogApp/db_secrets.json', 'r').read())['database']['name']
+    open('db_secrets.json', 'r').read())['database']['name']
 
 APPLICATION_NAME = "Catalog App"
 
