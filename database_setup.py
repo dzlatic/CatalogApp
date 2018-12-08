@@ -10,7 +10,7 @@ import psycopg2
 Base = declarative_base()
 
 DB_USER = json.loads(
-    open('db_secrets.json', 'r').read())['database']['user']
+    open("/var/www/CatalogApp/CatalogApp/db_secrets.json", 'r').read())['database']['user']
 
 DB_PASSWORD = json.loads(
     open('db_secrets.json', 'r').read())['database']['password']
