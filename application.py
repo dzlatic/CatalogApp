@@ -20,17 +20,17 @@ app = Flask(__name__)
 
 
 CLIENT_ID = json.loads(
-    open('client_secrets.json', 'r').read())['web']['client_id']
+    open('CatalogApp/client_secrets.json', 'r').read())['web']['client_id']
 APPLICATION_NAME = "Catalog App"
 
 DB_USER = json.loads(
-    open('db_secrets.json', 'r').read())['database']['user']
+    open('CatalogApp/db_secrets.json', 'r').read())['database']['user']
 
 DB_PASSWORD = json.loads(
-    open('db_secrets.json', 'r').read())['database']['password']
+    open('CatalogApp/db_secrets.json', 'r').read())['database']['password']
 
 DB_NAME = json.loads(
-    open('db_secrets.json', 'r').read())['database']['name']
+    open('CatalogApp/db_secrets.json', 'r').read())['database']['name']
 
 APPLICATION_NAME = "Catalog App"
 
